@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import "../styles/output.css";
 import "../styles/all.css";
 
 function Login() {
+  let navigate = useNavigate();
   const [visible, setVisible] = useState(false);
   const handleToggle = () => {
     setVisible(!visible);
@@ -65,30 +66,35 @@ function Login() {
             />
             {visible === false ? (
               <AiFillEyeInvisible
-                className="w-16 h-8 absolute top-4 right-2 cursor-pointer"
+                className="w-16 h-8 absolute top-3 right-2 cursor-pointer"
                 onClick={handleToggle}
               />
             ) : (
               <AiFillEye
-                className="w-16 h-8 absolute top-4 right-2 cursor-pointer"
+                className="w-16 h-8 absolute top-3 right-2 cursor-pointer"
                 onClick={handleToggle}
               />
             )}
           </div>
 
           <div className="flex justify-evenly mt-4 ">
-            <Link
-              to={"/quiz"}
+            <button
               className="btn-text text-green-400 cursor-pointer w-18 p-2 rounded-sm justify-center hover:bg-white hover:text-green-500 text-xl uppercase"
+              onClick={() => {
+                navigate("/quiz");
+              }}
             >
               login
-            </Link>
-            <Link
-              to={"/register"}
+            </button>
+
+            <button
               className="btn-text text-green-400 cursor-pointer w-18 p-2 rounded-sm justify-center hover:bg-white hover:text-green-500 text-xl uppercase"
+              onClick={() => {
+                navigate("/register");
+              }}
             >
               register
-            </Link>
+            </button>
           </div>
         </div>
       </form>

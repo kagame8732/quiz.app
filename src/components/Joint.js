@@ -4,6 +4,7 @@ import Quiz from "../components/Quiz";
 import Register from "./Register";
 import Home from "./Home";
 import Login from "./Login";
+import Error from "./Error";
 
 function Joint() {
   return (
@@ -13,6 +14,7 @@ function Joint() {
         <Route path="/home" element={<Home />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
     </Router>
   );
