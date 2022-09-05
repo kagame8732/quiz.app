@@ -3,7 +3,6 @@ import "../styles/output.css";
 import "../styles/all.css";
 import { QuizContext } from "../contexts/quiz";
 import Question from "../components/Question";
-import { NavLink } from "react-router-dom";
 
 const Quiz = () => {
   const [quizState, dispatch] = useContext(QuizContext);
