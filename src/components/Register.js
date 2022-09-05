@@ -35,7 +35,7 @@ const Register = () => {
           </div>
           <div className="bg-white bg-opacity-40 p-2 rounded-md flex mt-4 relative">
             <input
-              type="password"
+              type={visible === false ? "password" : "text"}
               name="password"
               placeholder="Enter Password"
               className="bg-white bg-opacity-30 rounded-sm p-2 w-full border-0 placeholder-slate-900"
@@ -43,12 +43,12 @@ const Register = () => {
             />
             {visible === false ? (
               <AiFillEyeInvisible
-                className="w-16 h-8 absolute top-4 right-2 cursor-pointer"
+                className="w-16 h-8 absolute top-3 right-2 cursor-pointer"
                 onClick={handleToggle}
               />
             ) : (
               <AiFillEye
-                className="w-16 h-8 absolute top-4 right-2 cursor-pointer"
+                className="w-16 h-8 absolute top-3 right-2 cursor-pointer"
                 onClick={handleToggle}
               />
             )}
