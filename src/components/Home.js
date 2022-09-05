@@ -1,10 +1,10 @@
 import React from "react";
+import Quiz from "../components/Quiz";
 
 function Home() {
   return (
     <div className="">
-      <div></div>
-      <div></div>
+      <Quiz />
     </div>
   );
 }
