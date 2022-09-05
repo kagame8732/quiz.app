@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import "../styles/output.css";
 import "../styles/all.css";
 
 function Login() {
+  const [visible, setVisible] = useState(false);
+  const handleToggle = () => {
+    setVisible(!visible);
+  };
   return (
     <div className=" bg-gray-600 bg-opacity-70 w-96 h-80 px-4 py-4 rounded-md ml-auto mr-auto mt-32">
       <form>
@@ -52,12 +57,23 @@ function Login() {
             </svg>
 
             <input
-              type="password "
+              type={visible === false ? "password" : "text"}
               name="password"
               placeholder="Enter Password"
               className="bg-white bg-opacity-30 rounded-sm p-2 w-full border-0 placeholder-slate-900"
               required
             />
+            {visible === false ? (
+              <AiFillEyeInvisible
+                className="w-16 h-8 absolute top-4 right-2 cursor-pointer"
+                onClick={handleToggle}
+              />
+            ) : (
+              <AiFillEye
+                className="w-16 h-8 absolute top-4 right-2 cursor-pointer"
+                onClick={handleToggle}
+              />
+            )}
           </div>
 
           <div className="flex justify-evenly mt-4 ">
